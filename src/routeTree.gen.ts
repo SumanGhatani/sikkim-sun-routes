@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TrainGuideRouteImport } from './routes/train-guide'
+import { Route as NjpToGangtokRouteImport } from './routes/njp-to-gangtok'
 import { Route as ItinerariesRouteImport } from './routes/itineraries'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BudgetCalculatorRouteImport } from './routes/budget-calculator'
@@ -18,6 +19,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const TrainGuideRoute = TrainGuideRouteImport.update({
   id: '/train-guide',
   path: '/train-guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NjpToGangtokRoute = NjpToGangtokRouteImport.update({
+  id: '/njp-to-gangtok',
+  path: '/njp-to-gangtok',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ItinerariesRoute = ItinerariesRouteImport.update({
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/budget-calculator': typeof BudgetCalculatorRoute
   '/contact': typeof ContactRoute
   '/itineraries': typeof ItinerariesRoute
+  '/njp-to-gangtok': typeof NjpToGangtokRoute
   '/train-guide': typeof TrainGuideRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/budget-calculator': typeof BudgetCalculatorRoute
   '/contact': typeof ContactRoute
   '/itineraries': typeof ItinerariesRoute
+  '/njp-to-gangtok': typeof NjpToGangtokRoute
   '/train-guide': typeof TrainGuideRoute
 }
 export interface FileRoutesById {
@@ -61,6 +69,7 @@ export interface FileRoutesById {
   '/budget-calculator': typeof BudgetCalculatorRoute
   '/contact': typeof ContactRoute
   '/itineraries': typeof ItinerariesRoute
+  '/njp-to-gangtok': typeof NjpToGangtokRoute
   '/train-guide': typeof TrainGuideRoute
 }
 export interface FileRouteTypes {
@@ -70,15 +79,23 @@ export interface FileRouteTypes {
     | '/budget-calculator'
     | '/contact'
     | '/itineraries'
+    | '/njp-to-gangtok'
     | '/train-guide'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/budget-calculator' | '/contact' | '/itineraries' | '/train-guide'
+  to:
+    | '/'
+    | '/budget-calculator'
+    | '/contact'
+    | '/itineraries'
+    | '/njp-to-gangtok'
+    | '/train-guide'
   id:
     | '__root__'
     | '/'
     | '/budget-calculator'
     | '/contact'
     | '/itineraries'
+    | '/njp-to-gangtok'
     | '/train-guide'
   fileRoutesById: FileRoutesById
 }
@@ -87,6 +104,7 @@ export interface RootRouteChildren {
   BudgetCalculatorRoute: typeof BudgetCalculatorRoute
   ContactRoute: typeof ContactRoute
   ItinerariesRoute: typeof ItinerariesRoute
+  NjpToGangtokRoute: typeof NjpToGangtokRoute
   TrainGuideRoute: typeof TrainGuideRoute
 }
 
@@ -97,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/train-guide'
       fullPath: '/train-guide'
       preLoaderRoute: typeof TrainGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/njp-to-gangtok': {
+      id: '/njp-to-gangtok'
+      path: '/njp-to-gangtok'
+      fullPath: '/njp-to-gangtok'
+      preLoaderRoute: typeof NjpToGangtokRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/itineraries': {
@@ -135,6 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   BudgetCalculatorRoute: BudgetCalculatorRoute,
   ContactRoute: ContactRoute,
   ItinerariesRoute: ItinerariesRoute,
+  NjpToGangtokRoute: NjpToGangtokRoute,
   TrainGuideRoute: TrainGuideRoute,
 }
 export const routeTree = rootRouteImport
