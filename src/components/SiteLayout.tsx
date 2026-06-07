@@ -42,6 +42,7 @@ function Footer() {
           </div>
           <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
             <Link to="/train-guide" className="hover:text-foreground">Train Guide</Link>
+            <Link to="/majitar-station" className="hover:text-foreground">Majitar Station</Link>
             <Link to="/itineraries" className="hover:text-foreground">Itineraries</Link>
             <Link to="/budget-calculator" className="hover:text-foreground">Budget Calculator</Link>
             <Link to="/contact" className="hover:text-foreground">Contact</Link>
