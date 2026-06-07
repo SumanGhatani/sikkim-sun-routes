@@ -21,6 +21,7 @@ function Header() {
         </Link>
         <nav className="hidden gap-7 text-sm text-muted-foreground sm:flex">
           <Link to="/train-guide" className="hover:text-foreground">Train Guide</Link>
+          <Link to="/majitar-station" className="hover:text-foreground">Majitar Station</Link>
           <Link to="/itineraries" className="hover:text-foreground">Itineraries</Link>
           <Link to="/budget-calculator" className="hover:text-foreground">Budget</Link>
           <Link to="/contact" className="hover:text-foreground">Contact</Link>
