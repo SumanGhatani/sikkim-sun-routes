@@ -17,7 +17,7 @@ function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         <Link to="/" className="flex items-center gap-2 font-display text-lg font-semibold">
           <Mountain className="h-5 w-5 text-primary" strokeWidth={1.75} />
-          sikkimtrainguide.com
+          Sikkim Train Guide
         </Link>
         <nav className="hidden gap-7 text-sm text-muted-foreground sm:flex">
           <Link to="/train-guide" className="hover:text-foreground">Train Guide</Link>
@@ -37,7 +37,7 @@ function Footer() {
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
           <div className="flex items-center gap-2 text-sm">
             <Mountain className="h-4 w-4 text-primary" strokeWidth={1.75} />
-            <span className="font-display font-semibold">sikkimtrainguide.com</span>
+            <span className="font-display font-semibold">Sikkim Train Guide</span>
           </div>
           <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
             <Link to="/train-guide" className="hover:text-foreground">Train Guide</Link>
